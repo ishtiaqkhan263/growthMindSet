@@ -16,7 +16,7 @@ if uploaded_file:
         if file_exe == ".csv":
             df = pd.read_csv(file)
         elif file_exe == ".xlsx":
-            df = pd.read_excel(file)
+            df = pd.read_excel(file, engine='openpyxl')
         else:
             st.error(f"Invalid file type: {file_exe}")
             continue
